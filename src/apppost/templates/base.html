@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>I Greet you ooo Boss!</title> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% include 'navbar.html' %}
+        {% if messages %}
+            {% for message in messages%}
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}
+        
+        {% endblock %}
+        <div class="logo">
+            <div class="svgs">
+                <a href="https://github.com/Ibkodus116" target="_blank" rel="noopener noreferrer"><img width="30" class="github" src="{% static 'image/github.svg' %}" alt="github"></a> 
+                <a href="https://www.linkedin.com/in/odusanya-ibukun-5092a6154/" target="_blank" rel="noopener noreferrer"><img width="30" class="link" src="{% static 'image/link.svg' %}" alt="linkden"></a>
+                <a href="http://twitter.com/__Adewale__" target="_blank" rel="noopener noreferrer"><img width="30" class="tweet" src="{% static 'image/twitter.svg' %}" alt="twitter"></a>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</html>

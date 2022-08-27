@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<title>I Greet you ooo Boss!</title>
+
+<div class="flex">
+    <div class="box one poll">
+        <img src="{% static 'image/bolu.jpeg' %}" alt="image" class="pix">
+    </div>
+    <div class="box two poll">
+        <div class="topic">
+            <h1>
+                <a href="#">
+                    How person go begin write Django. Things wey person suppose sabi
+                </a>
+            </h1>
+            <small>Posted by <span>ibukun</span></small> <small>DD-MM-YYYY</small>
+        </div>
+        <div class="parag">
+            <p>
+                Many things dey wey person suppose sabi before him go even think say him wan start to dey learn
+                django. for this particular matter we go talk about some of them, as programing be ehn you no
+                fit sabi everything so just try sabi this ones frist then as you dey learn you go dey sabi am
+                wella before you sabi waitng they sup you done turn oga for coding!
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% for item in post %}
+<hr class="line">
+<br>
+<div class="flex">
+
+    <div class="box one">
+        <img src="{% static 'image/bolu.jpeg' %}" alt="image" class="pix">
+    </div>
+    <div class="box two">
+        <div class="topic">
+            <h1>
+                <a href="{% url 'view' item.id %}">
+                    {{item.headline|truncatewords_html:6}}
+                </a>
+            </h1>
+            <small>Posted by <span>{{item.name}}</span></small> <small>{{item.date}}</small>
+        </div>
+        <div class="parag">
+            <p>
+                {{item.contex|truncatewords_html:30|safe}}
+
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

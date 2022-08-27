@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="holder">
+    <div class="infoh1">
+        <h1>{{post.headline}}</h1>
+        <small>Posted by <span>{{post.name}}</span> {{post.date}}</small>
+    </div>
+    <center>
+        <img src="{% static 'image/bolu.jpeg' %}" alt="image" class="pixinfo">
+    </center>
+    <p>
+        {{post.contex|safe}}
+    </p>
+    <center>
+        <a href="{% url 'edit' post.id %}"> <button type="button" class="btn btn-primary btn-lg">Edit</button></a>
+        <a href="{% url 'delete' post.id %}"> <button type="button" class="btn btn-danger btn-lg">Delete</button></a>
+    </center>
+</div>
+
+{% endblock %}

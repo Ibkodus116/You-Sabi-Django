@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <h1>Are you sure to delete</h1>        
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+            <a href="{% url 'home' %}"><button type="button" class="btn btn-danger">No</button></a>
+        </div>
+        
+    </form>
+</center>
+{% endblock %}

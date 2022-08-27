@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="holder">
+    <div class="sign">
+        <h1>Login Here</h1>
+        <form action="" method=POST class="sign-form">
+            {% csrf_token %}
+            <label for="fname">User Name</label>
+            <input type="text" name="username" class="signup">
+            <!-- <label for="lname">Last Name</label> -->
+            <!-- <input type="text" name="lname" class="signup"> -->
+            <!-- <label for="mail">Email</label> -->
+            <!-- <input type="email" name="mail" class="signup"> -->
+            <label for="pass">Password</label>
+            <input type="password" name="password" class="signup"><br><br><br>
+            <input type="submit" value="LOGIN" class="sign-button">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="holder">
+    <div class="sign">
+        <h1>Sign up Here</h1>
+        {% if form.errors %}
+        <p>Error Occur Please Check and try again...</p>
+        {% endif %}
+        <form action="{% url 'signup' %}" class="sign-form">
+            {% csrf_token %}
+            <!-- <label for="fname">First Name</label>
+            <input type="text" name="fname" class="signup">
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" class="signup">
+            <label for="mail">Email</label>
+            <input type="email" name="mail" class="signup">
+            <label for="pass">password</label>
+            <input type="password" name="pass" class="signup"> -->
+            {{ form }}
+            <input type="submit" value="SIGN UP" class="sign-button">
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
